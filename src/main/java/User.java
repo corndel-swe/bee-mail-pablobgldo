@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class User {
