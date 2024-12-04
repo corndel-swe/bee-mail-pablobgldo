@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Message {
-    private static final Map<User, Integer> userCounters = new HashMap<>();
+    private static final Map<User, Integer> userInboxCounters = new HashMap<>();
     private String message_id;
     private LocalDateTime timestamp;
     private String content;
@@ -13,9 +13,9 @@ public class Message {
     private boolean read;
 
     private static String generateId(User user) {
-        userCounters.putIfAbsent(user, 0);
-        int userIdCounter = userCounters.get(user);
-        userCounters.put(user, userIdCounter + 1);
+        if (!userInboxCounters.containsKey(user)) {userInboxCounters.put(user, 0);}
+        int userIdCounter = userInboxCounters.get(user);
+        userInboxCounters.put(user, userIdCounter + 1);
         return user.getUsername() + "-" + userIdCounter;
     }
 

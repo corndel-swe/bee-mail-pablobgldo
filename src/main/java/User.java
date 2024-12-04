@@ -40,7 +40,7 @@ public class User {
             message.markRead();
             message.log();
         } catch (Exception e) {
-      System.out.printf("Couldn't read message. Error: %s", e);
+      System.out.printf("Couldn't read message. Error: %s", e.getMessage());
         }
     }
 }

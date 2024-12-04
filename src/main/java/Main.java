@@ -20,11 +20,11 @@ public class Main {
         charlie.readMessage(0);
         System.out.println();
 
-        violet.sendMessage("789", "Hey Mike 0");
+        violet.sendMessage("789", "Hello Mike");
         mike.readMessage(0);
         System.out.println();
 
-        violet.sendMessage("789", "Hey Mike 1");
+        violet.sendMessage("789", "Hey Mike");
         mike.readMessage(1);
         System.out.println();
 
