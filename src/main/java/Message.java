@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +34,7 @@ public class Message {
         System.out.println("Message ID: " + message_id);
         System.out.println("From: " + from.getUsername());
         System.out.println("To: " + to.getUsername());
-        System.out.println("Timestamp: " + timestamp);
+        System.out.println("Timestamp: " + timestamp.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
         System.out.println("Content: " + content);
         System.out.println("Delivered: " + delivered);
         System.out.println("Read: " + read);
