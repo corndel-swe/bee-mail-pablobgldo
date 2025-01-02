@@ -30,5 +30,8 @@ public class Main {
 
         mike.readMessage(2);
         System.out.println();
+
+        app.deliverExternalMessage("123", "456", "This is an external message.");
+        violet.readMessage(1);
     }
 }

@@ -3,10 +3,10 @@ import java.util.List;
 public class User {
     private String id;
     private String username;
-    private List<Message> inbox;
+    private List<MessageInterface> inbox;
     private App app;
 
-    public User(String id, String username, List<Message> inbox, App app) {
+    public User(String id, String username, List<MessageInterface> inbox, App app) {
         this.id = id;
         this.username = username;
         this.inbox = inbox;
@@ -30,17 +30,20 @@ public class User {
         app.deliverMessage(this.id, recipientId, content);
     }
 
-    public void receiveMessage(Message message) {
+    public void receiveMessage(MessageInterface message) {
         inbox.add(message);
     }
 
+
     public void readMessage(int idx) {
         try {
-            Message message = inbox.get(idx);
+            MessageInterface message = inbox.get(idx);
             message.markRead();
             message.log();
         } catch (Exception e) {
-      System.out.printf("Couldn't read message. Error: %s", e.getMessage());
+            System.out.printf("Couldn't read message. Error: %s", e.getMessage());
+            System.out.println();
         }
     }
+
 }

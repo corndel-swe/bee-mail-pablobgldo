@@ -31,4 +31,16 @@ public class App implements Mediator {
         recipient.receiveMessage(message);
         message.markDelivered();
     }
+
+
+    public void deliverExternalMessage(String senderId, String recipientId, String body) {
+        User sender = findUser(senderId);
+        User recipient = findUser(recipientId);
+
+        ExternalMessage externalMessage = new ExternalMessage(body);
+        MessageInterface adapter = new Adapter(externalMessage);
+
+        recipient.receiveMessage(adapter);
+    }
+
 }
