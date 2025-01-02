@@ -38,7 +38,7 @@ public class App implements Mediator {
         User recipient = findUser(recipientId);
 
         ExternalMessage externalMessage = new ExternalMessage(body);
-        MessageInterface adapter = new Adapter(externalMessage);
+        Adapter adapter = new Adapter(externalMessage);
 
         recipient.receiveMessage(adapter);
     }
